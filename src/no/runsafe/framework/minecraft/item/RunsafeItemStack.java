@@ -121,8 +121,8 @@ public abstract class RunsafeItemStack extends BukkitItemStack implements IEncha
 	@Override
 	public void setTagCompound(String key, String value)
 	{
-		net.minecraft.server.v1_8_R3.ItemStack rawItem =
-			(net.minecraft.server.v1_8_R3.ItemStack) ReflectionHelper.getObjectField(itemStack, "handle");
+		net.minecraft.server.v1_12_R1.ItemStack rawItem =
+			(net.minecraft.server.v1_12_R1.ItemStack) ReflectionHelper.getObjectField(itemStack, "handle");
 		if (!rawItem.hasTag())
 		{
 			NBTTagCompound tag = new NBTTagCompound();
@@ -149,7 +149,7 @@ public abstract class RunsafeItemStack extends BukkitItemStack implements IEncha
 	@Override
 	public RunsafeMeta cloneWithNewCompound(NBTTagCompound compound)
 	{
-		net.minecraft.server.v1_8_R3.ItemStack raw = CraftItemStack.asNMSCopy(itemStack);
+		net.minecraft.server.v1_12_R1.ItemStack raw = CraftItemStack.asNMSCopy(itemStack);
 		raw.setTag(compound);
 		return ObjectWrapper.convert(CraftItemStack.asCraftMirror(raw));
 	}
