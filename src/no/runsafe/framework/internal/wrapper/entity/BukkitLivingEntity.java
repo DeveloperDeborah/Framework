@@ -12,6 +12,7 @@ import no.runsafe.framework.minecraft.inventory.RunsafeEntityEquipment;
 import no.runsafe.framework.minecraft.entity.RunsafeEntity;
 import no.runsafe.framework.minecraft.entity.RunsafeProjectile;
 import no.runsafe.framework.internal.wrapper.ObjectWrapper;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -81,19 +82,19 @@ public abstract class BukkitLivingEntity extends RunsafeEntity implements ILivin
 	}
 
 	@Override
-	public List<IBlock> getLineOfSight(HashSet<Byte> transparent, int maxDistance)
+	public List<IBlock> getLineOfSight(HashSet<Material> transparent, int maxDistance)
 	{
 		return ObjectWrapper.convert(livingEntity.getLineOfSight(transparent, maxDistance));
 	}
 
 	@Override
-	public IBlock getTargetBlock(HashSet<Byte> transparent, int maxDistance)
+	public IBlock getTargetBlock(HashSet<Material> transparent, int maxDistance)
 	{
-		return ObjectWrapper.convert(livingEntity.getTargetBlock(transparent, maxDistance));
+		return ObjectWrapper.convert(livingEntity.getTargetBlock(transparent, maxDistance));//needs a set of materials
 	}
 
 	@Override
-	public List<IBlock> getLastTwoTargetBlocks(HashSet<Byte> transparent, int maxDistance)
+	public List<IBlock> getLastTwoTargetBlocks(HashSet<Material> transparent, int maxDistance)
 	{
 		return ObjectWrapper.convert(livingEntity.getLastTwoTargetBlocks(transparent, maxDistance));
 	}
