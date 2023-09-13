@@ -30,7 +30,7 @@ public final class PluginConfiguration extends Holder implements IConfiguration
 		InputStream defaults = configurationFile.getDefaultConfiguration();
 		if (defaults != null)
 		{
-			configFile.setDefaults(YamlConfiguration.loadConfiguration(defaults));
+			configFile.setDefaults(YamlConfiguration.loadConfiguration(file));
 			configFile.options().copyDefaults(true);
 		}
 		save();

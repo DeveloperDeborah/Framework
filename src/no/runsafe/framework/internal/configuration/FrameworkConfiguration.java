@@ -22,7 +22,7 @@ public final class FrameworkConfiguration extends Holder
 		InputStream defaults = getClass().getResourceAsStream("/default.yml");
 		if (defaults != null)
 		{
-			configFile.setDefaults(YamlConfiguration.loadConfiguration(defaults));
+			configFile.setDefaults(YamlConfiguration.loadConfiguration(file));
 			configFile.options().copyDefaults(true);
 		}
 		save();
