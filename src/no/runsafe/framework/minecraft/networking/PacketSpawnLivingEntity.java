@@ -9,9 +9,9 @@ public class PacketSpawnLivingEntity extends RunsafePacket
 	{
 		PacketPlayOutSpawnEntityLiving raw = new PacketPlayOutSpawnEntityLiving();
 
-		/*
+		/* TODO: this needs to be updated, figure out what to do with UUID
 		 * Variable names in various spigot versions:
-		 * Type    1.8    1.10+  Description
+		 * Type    1.8    1.12+  Description
 		 * int     a      a      EntityID
 		 * int     b      c      EntityType
 		 * int     c      N/A    X location divided by 32

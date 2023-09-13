@@ -222,22 +222,13 @@ public abstract class BukkitEntity extends BukkitMetadata
 
 	public void setSilent(boolean audible)
 	{
-		/*
-		 * Obfuscated method names in various spigot versions:
-		 * v1_9_R2: c
-		 * v1_10_R1 and up: setSilent
-		 */
-		((CraftEntity) entity).getHandle().b(audible);
+
+		entity.setSilent(audible);
 	}
 
 	public boolean isSilent()
 	{
-		/*
-		 * Obfuscated method names in various spigot versions:
-		 * v1_9_R2: ad
-		 * v1_10_R1 and up: setSilent
-		 */
-		return ((CraftEntity) entity).getHandle().R();
+		return entity.isSilent();
 	}
 
 	/**
